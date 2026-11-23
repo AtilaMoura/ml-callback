@@ -1,3 +1,155 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><meta name="referrer" content="no-referrer"><title>Autorização recebida</title></head>
-<body><p>Autorização recebida. Pode fechar esta janela.</p></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<!-- Página de retorno do OAuth: sem script e sem recurso externo (SEG-07/SEG-08). O CSP abaixo bloqueia qualquer script ou carga de fora. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Flex Courier Monitor · Authorization received</title>
+<style>
+  /* Tokens por papel, em OKLCH (COR-04); poucas cores com função (COR-05) */
+  :root{
+    --bg: oklch(98% 0.004 250);
+    --surface: oklch(100% 0 0);
+    --surface-2: oklch(95.5% 0.008 250);
+    --text: oklch(24% 0.02 255);
+    --muted: oklch(44% 0.02 255);
+    --border: oklch(88% 0.01 255);
+    --accent: oklch(46% 0.14 255);
+    --accent-text: oklch(100% 0 0);
+    --ok-bg: oklch(94% 0.06 150);
+    --ok: oklch(34% 0.09 150);
+    --radius: 12px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg: oklch(18% 0.012 255);
+      --surface: oklch(22% 0.014 255);
+      --surface-2: oklch(26% 0.016 255);
+      --text: oklch(94% 0.006 250);
+      --muted: oklch(76% 0.014 250);
+      --border: oklch(34% 0.016 255);
+      --accent: oklch(76% 0.11 255);
+      --accent-text: oklch(18% 0.02 255);
+      --ok-bg: oklch(30% 0.05 150);
+      --ok: oklch(88% 0.09 150);
+      color-scheme: dark;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}   /* MOV-04 */
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  a{color:var(--accent)}
+  a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}   /* ACE-04 */
+
+  /* Aviso de retorno do OAuth: primeira coisa que a pessoa vê */
+  .aviso{background:var(--ok-bg);color:var(--ok);border-bottom:1px solid var(--border);padding:14px 16px}
+  .aviso .in{max-width:880px;margin:0 auto;display:flex;gap:12px;align-items:flex-start}
+  .aviso .marca{flex:none;width:28px;height:28px;border-radius:50%;background:var(--ok);color:var(--ok-bg);display:grid;place-items:center;font-weight:700;line-height:1}
+  .aviso p{margin:0;max-width:none}
+  .aviso strong{display:block}
+
+  main{max-width:880px;margin:0 auto;padding:40px 16px 56px}
+  .lang{color:var(--muted);font-size:.95rem;margin:0 0 20px}
+  h1{font-size:clamp(1.7rem,4.5vw,2.4rem);line-height:1.2;margin:0 0 12px;letter-spacing:-.01em}
+  h2{font-size:1.2rem;line-height:1.3;margin:0 0 8px}
+  h3{font-size:1.05rem;line-height:1.35;margin:0 0 6px}
+  p{margin:.5rem 0;max-width:66ch}
+  .lead{font-size:1.15rem;color:var(--muted);max-width:60ch}
+
+  .bloco{margin-top:40px}
+  .passos{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));counter-reset:p}
+  .passos li{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;counter-increment:p}
+  .passos li::before{content:counter(p);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-text);font-weight:700;margin-bottom:12px}
+  .passos p{color:var(--muted);margin:0}
+
+  .principios{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));margin-top:16px}
+  .principios div{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+  .principios p{color:var(--muted);margin:0}
+
+  hr{border:0;border-top:1px solid var(--border);margin:56px 0 0}
+  footer{margin-top:40px;color:var(--muted);font-size:.95rem}
+  footer p{max-width:none}
+</style>
+</head>
+<body>
+
+<!-- Aviso de retorno do OAuth (ACE-07: mensagem de status anunciada) -->
+<div class="aviso" role="status">
+  <div class="in">
+    <span class="marca" aria-hidden="true">✓</span>
+    <p><strong>Authorization received. You can close this window.</strong>
+    <span lang="pt-BR">Autorização recebida. Pode fechar esta janela.</span></p>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ============ ENGLISH ============ -->
+<section aria-labelledby="h-en">
+  <p class="lang">English · <a href="#pt" hreflang="pt-BR">Português</a></p>
+  <h1 id="h-en">Flex Courier Monitor</h1>
+  <p class="lead">Visibility and control for last-mile deliveries, in one read-only view.</p>
+
+  <div class="bloco">
+    <h2>The idea</h2>
+    <p>Delivery operations run on many separate records. This project brings them together so a delivery company can see what happened to each package and settle its couriers with confidence.</p>
+    <ol class="passos">
+      <li><h3>Arrival</h3><p>Know which packages reached the hub.</p></li>
+      <li><h3>Custody</h3><p>Know which courier holds each package.</p></li>
+      <li><h3>Closing</h3><p>Know what was delivered and what each courier is owed.</p></li>
+    </ol>
+  </div>
+
+  <div class="bloco">
+    <h2>Principles</h2>
+    <div class="principios">
+      <div><h3>Read-only</h3><p>It observes delivery data. It does not create, change or cancel anything.</p></div>
+      <div><h3>Privacy first</h3><p>It is being built to keep access tokens encrypted and data only as long as needed.</p></div>
+      <div><h3>You stay in control</h3><p>Each connected user can withdraw access at any time.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr id="pt">
+
+<!-- ============ PORTUGUÊS ============ -->
+<section lang="pt-BR" aria-labelledby="h-pt" style="margin-top:40px">
+  <p class="lang"><a href="#top" hreflang="en">English</a> · Português</p>
+  <h1 id="h-pt">Flex Courier Monitor</h1>
+  <p class="lead">Visibilidade e controle das entregas de última milha, em uma visão somente leitura.</p>
+
+  <div class="bloco">
+    <h2>A ideia</h2>
+    <p>A operação de entregas gera muitos registros separados. Este projeto os reúne para que uma empresa de entregas veja o que aconteceu com cada pacote e feche o repasse dos motoboys com segurança.</p>
+    <ol class="passos">
+      <li><h3>Chegada</h3><p>Saber quais pacotes chegaram ao galpão.</p></li>
+      <li><h3>Posse</h3><p>Saber com qual motoboy está cada pacote.</p></li>
+      <li><h3>Fechamento</h3><p>Saber o que foi entregue e quanto cada motoboy tem a receber.</p></li>
+    </ol>
+  </div>
+
+  <div class="bloco">
+    <h2>Princípios</h2>
+    <div class="principios">
+      <div><h3>Somente leitura</h3><p>Observa os dados das entregas. Não cria, altera nem cancela nada.</p></div>
+      <div><h3>Privacidade primeiro</h3><p>Está sendo construído para guardar os tokens de acesso cifrados e os dados só pelo tempo necessário.</p></div>
+      <div><h3>Você no controle</h3><p>Cada usuário conectado pode retirar o acesso a qualquer momento.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><span lang="en">Independent project in development, not affiliated with any marketplace.</span> ·
+  <span lang="pt-BR">Projeto independente em desenvolvimento, sem vínculo com nenhum marketplace.</span></p>
+  <p><a href="https://github.com/AtilaMoura" rel="noopener noreferrer">github.com/AtilaMoura</a> ·
+  <a href="../">Overview · Apresentação</a></p>
+</footer>
+
+</main>
+</body>
+</html>
