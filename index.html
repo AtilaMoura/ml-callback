@@ -1,3 +1,135 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Callback</title></head>
-<body><p>Página de retorno de autorização.</p></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Flex Courier Monitor</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --text:#1c2430; --muted:#4b5767;
+    --border:#d9dee5; --accent:#2a4fa3; --note:#eef3fb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14181f; --surface:#1c222b; --text:#e9edf2; --muted:#aab4c2;
+      --border:#2f3846; --accent:#8fb0f0; --note:#202a3a;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  main{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+  header{margin-bottom:24px}
+  h1{font-size:1.7rem;line-height:1.25;margin:0 0 .25rem}
+  h2{font-size:1.15rem;margin:0 0 .5rem}
+  p,li{max-width:68ch}
+  .lead{color:var(--muted);margin:0}
+  section{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:14px 0}
+  ul{margin:.4rem 0;padding-left:1.2rem}
+  li{margin:.3rem 0}
+  .note{background:var(--note);border-left:5px solid var(--accent)}
+  a{color:var(--accent)}
+  a:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:3px}
+  .lang{color:var(--muted);font-size:.9rem;margin:0 0 6px}
+  hr{border:0;border-top:1px solid var(--border);margin:36px 0}
+  footer{color:var(--muted);font-size:.9rem;margin-top:28px}
+</style>
+</head>
+<body>
+<main id="top">
+
+<header>
+  <p class="lang">English · <a href="#pt">Português</a></p>
+  <h1>Flex Courier Monitor</h1>
+  <p class="lead">Read-only monitoring for last-mile delivery operations. Application overview.</p>
+</header>
+
+<section class="note">
+  <h2>Status</h2>
+  <p>This application is in development. This page presents it publicly and is also the OAuth 2.0 return address of the application (<code>/callback/</code>). It is an independent project and is not affiliated with, or endorsed by, Mercado Livre.</p>
+</section>
+
+<section>
+  <h2>What it does</h2>
+  <p>It helps a delivery company that operates Mercado Envios Flex with motorcycle couriers to see, in one dashboard, which packages arrived, which courier holds each package and which were delivered, and to calculate the courier payout from those events.</p>
+</section>
+
+<section>
+  <h2>What it reads</h2>
+  <p>Only for Mercado Livre accounts that explicitly authorize the application through OAuth 2.0:</p>
+  <ul>
+    <li>Shipment status events (shipments and Flex handshake notifications).</li>
+    <li>The courier assignment of each shipment.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>What it does not do</h2>
+  <ul>
+    <li>It does not create, edit or cancel shipments, listings or orders.</li>
+    <li>It does not sell, rent or share the data it receives.</li>
+    <li>It does not ask for your Mercado Livre password. Sign-in happens on Mercado Livre pages only.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Privacy by design</h2>
+  <p>The application is being built so that access tokens are stored encrypted, data is kept only for as long as the operation needs it, and each connected user can withdraw access at any time from the connected applications settings of their Mercado Livre account. Personal data is handled under Brazilian law (LGPD).</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Developer: <a href="https://github.com/AtilaMoura" rel="noopener noreferrer">github.com/AtilaMoura</a></p>
+</section>
+
+<hr id="pt">
+
+<header>
+  <p class="lang"><a href="#top">English</a> · Português</p>
+  <h1>Flex Courier Monitor</h1>
+  <p class="lead">Monitoramento somente leitura para operações de entrega de última milha. Apresentação do aplicativo.</p>
+</header>
+
+<section class="note">
+  <h2>Situação</h2>
+  <p>O aplicativo está em desenvolvimento. Esta página o apresenta publicamente e também é o endereço de retorno do OAuth 2.0 (<code>/callback/</code>). É um projeto independente, sem vínculo nem aprovação do Mercado Livre.</p>
+</section>
+
+<section>
+  <h2>O que faz</h2>
+  <p>Ajuda uma empresa de entregas que opera o Mercado Envios Flex com motoboys a ver, em um painel, quais pacotes chegaram, com qual motoboy está cada pacote e quais foram entregues, e a calcular o repasse do motoboy a partir desses eventos.</p>
+</section>
+
+<section>
+  <h2>O que lê</h2>
+  <p>Somente de contas do Mercado Livre que autorizarem o aplicativo de forma explícita por OAuth 2.0:</p>
+  <ul>
+    <li>Eventos de status dos envios (shipments e avisos de transferência do Flex).</li>
+    <li>A atribuição do motoboy em cada envio.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>O que não faz</h2>
+  <ul>
+    <li>Não cria, edita nem cancela envios, anúncios ou pedidos.</li>
+    <li>Não vende, aluga nem compartilha os dados que recebe.</li>
+    <li>Não pede a sua senha do Mercado Livre. O login acontece só nas páginas do Mercado Livre.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Privacidade desde o projeto</h2>
+  <p>O aplicativo está sendo construído para guardar os tokens de acesso cifrados, manter os dados só pelo tempo que a operação precisar e permitir que cada usuário conectado retire o acesso a qualquer momento, nas configurações de aplicativos conectados da conta do Mercado Livre. Os dados pessoais seguem a LGPD.</p>
+</section>
+
+<section>
+  <h2>Contato</h2>
+  <p>Desenvolvedor: <a href="https://github.com/AtilaMoura" rel="noopener noreferrer">github.com/AtilaMoura</a></p>
+</section>
+
+<footer>Flex Courier Monitor · independent project</footer>
+</main>
+</body>
+</html>
